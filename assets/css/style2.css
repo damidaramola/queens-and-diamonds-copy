@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
 body{
     margin:0;
-    padding:0;
+    padding:20px;
     font-family:'Fredoka', sans-serif;
+    background-image:url(/assets/images/Queen-ofDiamonds-small);
+    background-size: 150px;
+    background-repeat:repeat;
 }
 
 .container{
@@ -34,4 +37,28 @@ padding:15px 10px;
 width: 220px;
 border-radius: 25px;
 font-size: medium;
+}
+
+.container input[type="text"]:focus{
+ width: 250px;
+ border-color: black;
+}
+
+
+.container input[type="submit"]{
+    border :0;
+    font-family:'Fredoka', sans-serif;
+    background:white;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border:3px solid rgb(226, 136, 136);
+    padding: 10px;
+    border-radius: 25px;
+    font-size: medium; 
+    cursor: pointer;
+}
+
+.container input[type="submit"]:hover{
+background: rgb(226, 136, 136);
 }

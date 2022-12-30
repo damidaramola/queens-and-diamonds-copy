@@ -8,7 +8,7 @@
     --card-width-sm: 120px;
     --card-height-sm: 168px;
 
-    --num-cards: 4;
+    --num-cards: 6;
     --card-horizontal-space-1g: 100px;
     --card-horizontal-space-sm: 50px;
 
@@ -18,6 +18,7 @@
     --primary-font: 'Fredoka', sans-serif;
 
 }
+
 /* set body height and font-family */
 body {
     height: 100vh;
@@ -26,20 +27,21 @@ body {
 
 main {
     height: 55%;
-    display: flex;
+    display: none;
     justify-content: center;
 
 }
+
 /* place each card in a grid */
 .card-placement {
     position: relative;
     height: 100%;
     width: calc(var(--card-width-1g) * (var(--num-cards) / 2) + var(--card-horizontal-space-1g));
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: "a b"
-        "c d";
+    grid-template-areas: "a b c"
+        "d e f";
 
 }
 
@@ -47,32 +49,46 @@ main {
 .card-1 {
     grid-area: a;
 
-    
+
 }
 
 .card-2 {
     grid-area: b;
 
-    
+
 }
 
 .card-3 {
     grid-area: c;
-    ;
-   
+
+
 }
 
 .card-4 {
     grid-area: d;
 
-    
+
+}
+
+.card-5 {
+    grid-area: e;
+
+
+}
+
+.card-6 {
+    grid-area: f;
+
+
 }
 
 /* center cards in middle of the page and set their width and height */
 .card-1,
 .card-2,
 .card-3,
-.card-4 {
+.card-4,
+.card-5,
+.card-6 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,6 +102,7 @@ main {
     cursor: pointer;
     transition: transform 0.6s ease-in-out
 }
+
 /* stying of the front and back of the cards */
 .card-inner {
     position: relative;
@@ -117,6 +134,7 @@ main {
 .card-inner.flip-it {
     transform: rotateY(180deg);
 }
+
 /* Style layout of header element and classes */
 header {
     display: flex;
@@ -127,7 +145,7 @@ header {
 .header-title-container {
     display: flex;
     justify-content: center;
-
+    position: relative;
 }
 
 .header-round-info-container {
@@ -166,7 +184,8 @@ header {
     transform: rotate(-3deg);
 
 }
- /* styling for score count badges */
+
+/* styling for score count badges */
 .badge {
     background-color: var(--badge-bg-color);
     color: var(--secondary-color);
@@ -174,9 +193,10 @@ header {
     border-radius: 15px;
 }
 
-.score{
+.score {
     padding: 18px;
 }
+
 /* Styling for shuffling cards before a card is picked */
 .card.shuffle-left {
     transform: translateX(300px) translateY(40px);
@@ -190,6 +210,7 @@ header {
 .card.fly-in {
     transform: translateY(-1000px) translateX(-600px) rotate(45deg);
 }
+
 /* Stlye media queries for responsive design */
 @media screen and (max-width:600px) {
     .card {
@@ -216,14 +237,14 @@ header {
     font-family: var(--primary-font);
     font-size: 20px;
     font-weight: bold;
-    background:  rgb(245, 114, 114);
+    background: rgb(245, 114, 114);
     width: 150px;
-    padding:15px;
+    padding: 15px;
     text-align: center;
     text-decoration: none;
     color: #fff;
     border-radius: 5px;
-    cursor:pointer;
+    cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     --webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
@@ -232,9 +253,27 @@ header {
     margin: 25px;
 }
 
-.play-game:hover , .play-game:focus , .play-game:active {
+.play-game:hover,
+.play-game:focus,
+.play-game:active {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     --webkit-transform: scale(1.1);
     transform: scale(1.1);
 
+}
+
+
+#welcome {
+    position: absolute;
+    right: 0;
+    margin-right: 3rem;
+    align-self: center;
+    display: flex;
+    font-weight: bolder;
+    color: red;
+}
+
+#username{
+    margin-left: 10px;
+    text-transform: uppercase;
 }
