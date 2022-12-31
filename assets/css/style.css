@@ -8,7 +8,7 @@
     --card-width-sm: 120px;
     --card-height-sm: 168px;
 
-    --num-cards: 6;
+    --num-cards: 4;
     --card-horizontal-space-1g: 100px;
     --card-horizontal-space-sm: 50px;
 
@@ -38,10 +38,10 @@ main {
     height: 100%;
     width: calc(var(--card-width-1g) * (var(--num-cards) / 2) + var(--card-horizontal-space-1g));
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: "a b c"
-        "d e f";
+    grid-template-areas: "a b"
+        "c d";
 
 }
 
@@ -70,25 +70,12 @@ main {
 
 }
 
-.card-5 {
-    grid-area: e;
-
-
-}
-
-.card-6 {
-    grid-area: f;
-
-
-}
-
 /* center cards in middle of the page and set their width and height */
 .card-1,
 .card-2,
 .card-3,
-.card-4,
-.card-5,
-.card-6 {
+.card-4
+ {
     display: flex;
     justify-content: center;
     align-items: center;

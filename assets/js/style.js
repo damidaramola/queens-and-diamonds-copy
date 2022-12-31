@@ -15,15 +15,7 @@ const cardObjectDefined = [
   {
     id: 4,
     imagePath: "assets/images/Queen-ofDiamonds.PNG",
-  },
-  {
-    id: 5,
-    imagePath: "assets/images/joker-card.PNG",
-  },
-  {
-    id: 6,
-    imagePath: "assets/images/Queen-ofSpades.PNG",
-  },
+  }
 ];
 
 const queenId = 4;
@@ -60,7 +52,7 @@ const loseColor = "red";
 const primaryColor = "black";
 
 let roundNum = 0;
-let maxRounds = 1;
+let maxRounds = 3;
 let score = 0;
 
 let gameObj = {};
@@ -141,11 +133,11 @@ function calculateScoreToAdd(roundNum) {
   if (roundNum == 1) {
     return 100;
   } else if (roundNum == 2) {
-    return 50;
+    return 80;
   } else if (roundNum == 3) {
-    return 25;
+    return 40;
   } else {
-    return 10;
+    return 20;
   }
 }
 
@@ -433,11 +425,7 @@ function returnGridAreasMappedToCardPos() {
       areas = areas + "c ";
     } else if (cardPositions[index] == 4) {
       areas = areas + "d ";
-    } else if (cardPositions[index] == 5) {
-      areas = areas + "e ";
-    } else if (cardPositions[index] == 6) {
-      areas = areas + "f ";
-    }
+    } 
     if (index == 1) {
       firstPart = areas.substring(0, areas.length - 1);
       areas = "";
@@ -565,11 +553,7 @@ function mapCardIdToGridCell(card) {
     return ".card-3";
   } else if (card.id == 4) {
     return ".card-4";
-  } else if (card.id == 5) {
-    return ".card-5";
-  } else if (card.id == 6) {
-    return ".card-6";
-  }
+  } 
 }
 
 //local storage functions

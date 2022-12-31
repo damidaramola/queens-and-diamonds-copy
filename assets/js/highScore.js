@@ -1,8 +1,8 @@
-// Save Highscore to local storage
+// Save Highscores to local storage
 const highScoresContainer = document.getElementById("high-scores-container");
 const scores = JSON.parse(localStorage.getItem("score_data")) || [];
 
-// Displays Highscores on a page and checks if no high score is recorded 
+// Displays Highscores on a page and checks if no high score is recorded
 function displayScores() {
   console.log(scores, "<==scores");
 
@@ -27,8 +27,8 @@ function displayScores() {
 </tr>
            `;
     });
-  }else{
-    highScoresContainer.innerHTML = `<h1>No high scores available, play game to add high scores :)</h1>`
+  } else {
+    highScoresContainer.innerHTML = `<h1>No high scores available, play game to add high scores :)</h1>`;
   }
 }
 
